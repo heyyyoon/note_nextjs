@@ -1,7 +1,8 @@
 import { getProducts } from "@/service/products";
 import Link from "next/link";
+import MeowArticle from "@/component/MeowArticle";
 
-export const revalidate = 3;
+//export const revalidate = 3;
 
 export default async function ProductsPage() {
   const products = await getProducts();
@@ -16,6 +17,7 @@ export default async function ProductsPage() {
           </li>
         )}
       </ul>
+      <MeowArticle />
     </>
   )
 }
