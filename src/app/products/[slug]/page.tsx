@@ -1,6 +1,6 @@
 import { getProduct, getProducts } from "@/service/products";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 type Props = {
   params: {
@@ -11,7 +11,12 @@ export default async function ProductPage({params: {slug}}: Props) {
   const product = await getProduct(slug);
 
   if(!product) {
-    notFound();
+    // 제품을 찾지 못했다면 nofound 페이지를 보여줘도 되지만, 
+    //notFound();
+    // 만약 사용자가 존재하지 않는 product을 입력했다면
+    redirect('/products');
+    // products로 이동하도록 redirect 시켜줌
+
   }
   return (
     <>
