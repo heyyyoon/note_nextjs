@@ -9,9 +9,6 @@ export type Product = {
 
 export async function getProducts(): Promise<Product[]> {
   // node에서 제공해주는 path를 사용해서 경로 읽어오기
-  for(let i=0; i<1000000000; i++) {
-
-  }
   const filePath = path.join(process.cwd(), 'data', 'products.json');
   const data = await fs.readFile(filePath, 'utf-8');
 
