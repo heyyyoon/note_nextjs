@@ -1,3 +1,4 @@
+import GoProductsButton from "@/component/GoProductsButton";
 import { getProduct, getProducts } from "@/service/products";
 import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
@@ -27,6 +28,7 @@ export default async function ProductPage({params: {slug}}: Props) {
         width='300'
         height='300'
       />
+      <GoProductsButton />
     </>
   )
   
